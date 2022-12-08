@@ -19,8 +19,9 @@ cp .env.example .env
 ```
 4. Enter your API keys and your custom prompt in .env file
 ```JS
-OPENAI_API_KEY=your-api-key-here
-PROMPT=your-custom-prompt-here
+OPENAI_SECRET_KEY="<your secret key here>"
+
+DEFAULT_PROMPT="<your custom prompt here>"
 ```
 * API keys from OpenAI at https://openai.com.
 
