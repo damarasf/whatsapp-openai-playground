@@ -7,7 +7,7 @@ npm install npm@latest -g
 
 1. Clone the repo
 ```sh
-git clone https://github.com/damarasf/wa-openai
+git clone https://github.com/damarasf/wa-openai.git
 ```
 2. Install NPM packages
 ```sh
