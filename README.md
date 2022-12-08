@@ -19,7 +19,7 @@ cp .env.example .env
 ```
 4. Enter your API keys and your custom prompt in .env file
 ```JS
-OPENAI_SECRET_KEY="<your secret key here>"
+OPENAI_API_KEY="<your secret key here>"
 
 DEFAULT_PROMPT="<your custom prompt here>"
 ```
