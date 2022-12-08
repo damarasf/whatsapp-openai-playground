@@ -22,7 +22,7 @@ if (fs.existsSync(SESSION_FILE_PATH)) {
 }
 
 // Set up default prompt. credit: https://gist.github.com/mayfer/3c358fe638607531750582f9bad21d78
-let defaultPrompt = process.env.DEFAULT_PROMPT ? process.env.DEFAULT_PROMPT : "Saya adalah bot yang dibuat dengan GPT-3. Saya akan membalas pesan Anda dengan pesan yang saya kirim sebelumnya. Saya akan membantu Anda memulai percakapan dengan seseorang. Di bawah ini adalah beberapa percakapan saya dengan teman saya, "
+let defaultPrompt = process.env.DEFAULT_PROMPT ? process.env.DEFAULT_PROMPT : ""
 
 // Create array of selected contacts.
 let selectedContacts = []
