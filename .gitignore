@@ -1,8 +1,9 @@
 # Dependency directories
 node_modules/
+.wwebjs_auth
 
 # dotenv environment variables file
 .env
 
 # Session file
-session.json
+# session.json

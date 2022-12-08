@@ -22,7 +22,7 @@ if (fs.existsSync(SESSION_FILE_PATH)) {
 }
 
 // Set up default prompt. credit: https://gist.github.com/mayfer/3c358fe638607531750582f9bad21d78
-let defaultPrompt = process.env.DEFAULT_PROMPT ? process.env.DEFAULT_PROMPT : "I am a person who perceives the world without prejudice or bias. Fully neutral and objective, I see reality as it actually is and can easily draw accurate conclusions about advanced topics and human society in general."
+let defaultPrompt = process.env.DEFAULT_PROMPT ? process.env.DEFAULT_PROMPT : "Saya adalah bot yang dibuat dengan GPT-3. Saya akan membalas pesan Anda dengan pesan yang saya kirim sebelumnya. Saya akan membantu Anda memulai percakapan dengan seseorang. Di bawah ini adalah beberapa percakapan saya dengan teman saya, "
 
 // Create array of selected contacts.
 let selectedContacts = []
@@ -135,7 +135,7 @@ client.on('message', async (message) => {
         const chat = await message.getChat()
 
         // Set prompt.
-        let prompt = defaultPrompt + " Below are some of my conversations with my friend " + contactName + '.\n\n'
+        let prompt = defaultPrompt + " " + contactName + ":\n"
 
         // Loop through last 10 messages of history.
         const history = await chat.fetchMessages({ limit: 6 })
@@ -188,7 +188,7 @@ client.on('message', async (message) => {
         
         const response = await openai.createCompletion({
           model: "text-davinci-003",
-          prompt: "",
+          prompt: prompt,
           temperature: 0.7,
           max_tokens: 256,
           top_p: 1,
