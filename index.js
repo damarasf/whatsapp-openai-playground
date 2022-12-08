@@ -203,6 +203,18 @@ client.on('message', async (message) => {
         client.sendMessage(message.from, responseText)
         // Log reply.
         console.log(myName + ':', chalk.blueBright(responseText))
+
+        // ==== image ai =====
+        // const response = await openai.createImage({
+        //     prompt: prompt,
+        //     n: 1,
+        //     size: "1024x1024",
+        //   });
+        //     let image_url = response.data.data[0].url;
+        //     console.log(image_url);
+        //     client.sendMessage(message.from, image_url)
+        //     // Log reply.
+        //     console.log(myName + ':', chalk.blueBright(image_url))
     }
 })
 
