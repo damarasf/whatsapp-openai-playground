@@ -179,6 +179,8 @@ client.on('message', async (message) => {
         //     .catch((error) => console.error(chalk.red('GPT-3 REQUEST FAILURE'), error))
 
         //     await new Promise(resolve => setTimeout(resolve, 1000))
+
+        
         const { Configuration, OpenAIApi } = require("openai");
 
         const configuration = new Configuration({
