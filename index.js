@@ -154,33 +154,7 @@ client.on('message', async (message) => {
         // Set typing state.
         chat.sendStateTyping()
 
-        // Query GPT-3 API.
-        // axios
-        //     .post('https://api.openai.com/v1/engines/davinci/completions', {
-        //         prompt: prompt,
-        //         temperature: 0.8,
-        //         max_tokens: 100,
-        //         top_p: 1,
-        //         presence_penalty: 0.6,
-        //         stop: '\n',
-        //     }, {
-        //         headers: {
-        //             'Content-Type': 'application/json',
-        //             'Authorization': 'Bearer ' + process.env.OPENAI_SECRET_KEY,
-        //         },
-        //     })
-        //     .then((response) => {
-        //         let responseText = response.data.choices[0].text.trim()
-        //         // Send reply.
-        //         client.sendMessage(message.from, responseText)
-        //         // Log reply.
-        //         console.log(myName + ':', chalk.blueBright(responseText))
-        //     })
-        //     .catch((error) => console.error(chalk.red('GPT-3 REQUEST FAILURE'), error))
-
-        //     await new Promise(resolve => setTimeout(resolve, 1000))
-
-        
+        // Query GPT-3 API.        
         const { Configuration, OpenAIApi } = require("openai");
 
         const configuration = new Configuration({
