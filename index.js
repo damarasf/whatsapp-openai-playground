@@ -199,7 +199,7 @@ client.on('message', async (message) => {
           stop: ["4"],
         });
 
-        let responseText = response.data.choices[0].text.trim()
+        let responseText = response.data.choices[0].text;
         // Send reply.
         client.sendMessage(message.from, responseText)
         // Log reply.
