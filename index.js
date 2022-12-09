@@ -199,7 +199,7 @@ client.on('message', async (message) => {
           stop: ["4"],
         });
 
-        let responseText = response.data.choices[0].text;
+        let responseText = response.data.choices[0].text.trim()
         // Send reply.
         client.sendMessage(message.from, responseText)
         // Log reply.
@@ -211,7 +211,7 @@ client.on('message', async (message) => {
         //     n: 1,
         //     size: "1024x1024",
         //   });
-        //     let image_url = response.data.data[0].url;
+        //     let image_url = response.data.data[0].url
         //     console.log(image_url);
         //     client.sendMessage(message.from, image_url)
         //     // Log reply.
