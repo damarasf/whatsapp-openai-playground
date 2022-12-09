@@ -191,11 +191,12 @@ client.on('message', async (message) => {
         const response = await openai.createCompletion({
           model: "text-davinci-003",
           prompt: prompt,
-          temperature: 0.7,
-          max_tokens: 256,
-          top_p: 1,
+          temperature: 0,
+          max_tokens: 2048,
+          top_p: 0.5,
           frequency_penalty: 0,
           presence_penalty: 0,
+          stop: ["4"],
         });
 
         let responseText = response.data.choices[0].text.trim()
