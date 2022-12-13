@@ -8,6 +8,13 @@ const chalk = require('chalk')
 const { Client, LocalAuth } = require('whatsapp-web.js')
 const qrcode = require('qrcode-terminal')
 
+const { Configuration, OpenAIApi } = require("openai");
+
+const configuration = new Configuration({
+  apiKey: process.env.OPENAI_API_KEY,
+});
+const openai = new OpenAIApi(configuration);
+
 // Check for API keys.
 if (!process.env.OPENAI_API_KEY) {
     console.error(chalk.red('MISSING API KEY'), 'Please create an .env file that includes a variable named OPENAI_SECRET_KEY')
@@ -154,14 +161,7 @@ client.on('message', async (message) => {
         // Set typing state.
         chat.sendStateTyping()
 
-        // Query GPT-3 API.        
-        const { Configuration, OpenAIApi } = require("openai");
-
-        const configuration = new Configuration({
-          apiKey: process.env.OPENAI_API_KEY,
-        });
-        const openai = new OpenAIApi(configuration);
-        
+        // Handle Message
         const response = await openai.createCompletion({
           model: "text-davinci-003",
           prompt: prompt,
